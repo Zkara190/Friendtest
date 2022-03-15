@@ -1,0 +1,40 @@
+#include <iostream>
+
+ 
+
+class Shape {
+
+    protected:
+
+    float hight;
+
+    float width;
+     
+    public:
+    Shape (float a, float b) {
+    hight = a;
+    width = b;
+    }
+
+    friend class Rectangle;
+
+};
+
+ 
+
+class Rectangle {
+    public:
+    float A;
+    void Area(Shape q ) {
+        A = q.hight * q.width;
+        
+    }
+
+};
+
+int main() {
+    Shape f(5.5,2.3);
+    Rectangle rect;
+    rect.Area(f);
+    std::cout << rect.A;
+}
